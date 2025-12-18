@@ -6,7 +6,8 @@
   "main": "db.js",
   "scripts": {
     "start": "node src/server.js",
-    "test": "vitest"
+    "test": "vitest",
+    "test:ci": "node ./node_modules/vitest/vitest.mjs run"
   },
   "keywords": [],
   "author": "",
