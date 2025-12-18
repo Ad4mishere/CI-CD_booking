@@ -18,6 +18,7 @@
     "express": "^4.19.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.57.0",
     "newman": "^6.2.1",
     "vitest": "^4.0.15"
   }
