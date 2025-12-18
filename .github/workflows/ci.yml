@@ -25,7 +25,7 @@ jobs:
         run: npm install
 
       - name: Run unit tests (Vitest)
-        run: npx vitest run
+        run: npm run test:ci
 
       - name: Start backend server
         run: |
