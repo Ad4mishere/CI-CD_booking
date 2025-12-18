@@ -1,0 +1,22 @@
+{
+  "name": "cicd-bokningssystem",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "db.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^12.5.0",
+    "express": "^4.19.0"
+  },
+  "devDependencies": {
+    "newman": "^6.2.1",
+    "vitest": "^4.0.15"
+  }
+}
