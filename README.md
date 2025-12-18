@@ -158,6 +158,8 @@ main is protected and requires passing CI before merge
 
 ## Summary
 
+A Postman collection for testing all API endpoints is included in the `postman/` directory.
+
 This project demonstrates:
 
 A complete CI/CD pipeline
