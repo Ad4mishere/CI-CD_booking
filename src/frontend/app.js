@@ -156,7 +156,12 @@ const cancelBookingBtn = document.getElementById("cancelBookingBtn");
 const orderNumberInput = document.getElementById("orderNumberInput");
 const manageBookingMessage = document.getElementById("manageBookingMessage");
 
-cancelBookingBtn.addEventListener("click", async () => {
+const confirmModal = document.getElementById("confirmCancelModal");
+const confirmYes = document.getElementById("confirmCancelYes");
+const confirmNo = document.getElementById("confirmCancelNo");
+
+
+cancelBookingBtn.addEventListener("click", () => {
   const orderNumber = orderNumberInput.value.trim();
 
   if (!orderNumber) {
@@ -164,29 +169,39 @@ cancelBookingBtn.addEventListener("click", async () => {
     return;
   }
 
-  manageBookingMessage.textContent = "Avbokar...";
+  // Visa vit bekräftelse-modal
+  confirmModal.classList.remove("hidden");
 
-  const response = await fetch(`/api/bookings/${orderNumber}`, {
-    method: "DELETE"
-  });
+  confirmYes.onclick = async () => {
+    confirmModal.classList.add("hidden");
+    manageBookingMessage.textContent = "Avbokar...";
 
-  const data = await response.json();
+    const response = await fetch(`/api/bookings/${orderNumber}`, {
+      method: "DELETE"
+    });
 
-  if (!response.ok) {
-    manageBookingMessage.textContent = data.error || "Kunde inte avboka";
-    return;
-  }
+    const data = await response.json();
 
-  manageBookingMessage.textContent = "Bokningen är avbokad";
+    if (!response.ok) {
+      manageBookingMessage.textContent = data.error || "Kunde inte avboka";
+      return;
+    }
 
-  orderNumberInput.value = "";
-  loadTimeSlots();
+    manageBookingMessage.textContent = "Bokningen är avbokad";
+    orderNumberInput.value = "";
+    loadTimeSlots();
 
-  setTimeout(() => {
-    modal.classList.add("hidden");
-    manageBookingMessage.textContent = "";
-  }, 3000);
+    setTimeout(() => {
+      modal.classList.add("hidden");
+      manageBookingMessage.textContent = "";
+    }, 3000);
+  };
+
+  confirmNo.onclick = () => {
+    confirmModal.classList.add("hidden");
+  };
 });
+
 
 
 const rescheduleBookingBtn = document.getElementById("rescheduleBookingBtn");

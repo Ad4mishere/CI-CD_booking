@@ -115,3 +115,34 @@ h1 {
 #manageBookingModal.hidden {
   display: none;
 }
+
+#confirmCancelModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1000;
+}
+
+#confirmCancelModal:not(.hidden) {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+#confirmCancelModal .modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
