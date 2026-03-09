@@ -14,7 +14,7 @@ export function generateTimeSlots(daysAhead = 10) {
 
     const dayOfWeek = currentDate.getDay();
 
-    // 0 = söndag, 6 = lördag → hoppa över helger
+    
     if (dayOfWeek === 0 || dayOfWeek === 6) continue;
 
     const dateString = currentDate.toISOString().split("T")[0];

@@ -72,7 +72,7 @@ async function bookSelectedTime() {
     return;
   }
 
-  // 🟡 OMBOKNING (PUT)
+
   if (rescheduleOrderNumber) {
     statusText.textContent = "Bokar om...";
 
@@ -169,7 +169,7 @@ cancelBookingBtn.addEventListener("click", () => {
     return;
   }
 
-  // Visa vit bekräftelse-modal
+
   confirmModal.classList.remove("hidden");
 
   confirmYes.onclick = async () => {
