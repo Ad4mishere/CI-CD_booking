@@ -1,10 +1,10 @@
 import js from '@eslint/js';
 
 export default [
-  // Basregler
+
   js.configs.recommended,
 
-  // Node.js files (backend + configs)
+
   {
     files: ['**/*.js'],
     ignores: [
@@ -28,7 +28,7 @@ export default [
     }
   },
 
-  // Frontend browser files
+
   {
     files: ['src/frontend/**/*.js'],
     languageOptions: {
