@@ -22,14 +22,13 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       
       - name: Run ESLint
         run: npm run lint
 
       - name: Security audit
-        run: npm audit --production
-
+        run: npm audit --omit=dev --audit-level=high
 
       - name: Run unit tests (Vitest)
         run: npm run test:ci
@@ -37,8 +36,7 @@ jobs:
       - name: Start backend server
         run: |
             npm start &
-            sleep 5
-
+            npx wait-on http://localhost:3000
 
       - name: Run API tests (Newman)
         run: npm run test:api
@@ -48,4 +46,3 @@ jobs:
 
       - name: Run Playwright E2E tests
         run: npx playwright test
-

@@ -1,5 +1,13 @@
 # Booking System – DevOps CI/CD Project
 
+
+## Overview
+
+This project demonstrates a secure CI/CD pipeline for a booking system application.
+
+The focus is on automated testing, secure development practices, and controlled
+deployment through pull request validation.
+
 # Description
 
 The focus of the project is **architecture, testability, and automation of CI/CD**, rather than UI complexity.
